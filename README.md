@@ -8,7 +8,7 @@ This is a custom AI chatbot that interacts using OpenAI’s GPT-3.5 API. It feat
 
 ### ✅ Goals:
 - Finalized AI-based chatbot using OpenAI
-- Chose React for frontend and Node/Python for backend
+- Chose React for frontend and Node for backend
 - Created folder structure
 - Initialized GitHub repo
 
@@ -19,11 +19,23 @@ This is a custom AI chatbot that interacts using OpenAI’s GPT-3.5 API. It feat
 | Layer      | Technology              |
 |------------|--------------------------|
 | Frontend   | React.js, Tailwind CSS   |
-| Backend    | Node.js + Express OR Python + FastAPI |
+| Backend    | Node.js + Express |
 | AI Engine  | OpenAI GPT-3.5 API       |
 | Database   | MongoDB *(optional)*     |
 | Hosting    | Vercel (frontend), Render (backend) |
 
 ---
 
-## 🚀 How to Run (Coming Soon)
+## 📅 Day 2 – React UI Setup
+
+### ✅ Done:
+- Initialized React app inside `client/`
+- Integrated Tailwind CSS
+- Built a responsive chat interface
+- Added message input & chat bubbles layout
+
+### 🖼️ Preview:
+> (Include a screenshot of your chat UI here if possible)
+
+## Coming up: Day 3 – Backend setup to generate AI responses
+
