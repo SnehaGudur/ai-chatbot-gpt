@@ -34,8 +34,21 @@ This is a custom AI chatbot that interacts using OpenAI’s GPT-3.5 API. It feat
 - Built a responsive chat interface
 - Added message input & chat bubbles layout
 
-### 🖼️ Preview:
-> (Include a screenshot of your chat UI here if possible)
+---
 
-## Coming up: Day 3 – Backend setup to generate AI responses
+## 📅 Day 3 – Backend + OpenAI API Setup
+
+### ✅ Done:
+- Created backend in `/server` using Express.js
+- Installed OpenAI SDK and connected to GPT-3.5
+- Created `/chat` POST endpoint to accept messages
+- Used `.env` for storing API key securely
+
+### 🔐 API:
+- **POST** `/chat`
+- Body: `{ "message": "your prompt here" }`
+- Returns: `{ "reply": "AI response" }`
+
+
+
 
