@@ -1,32 +1,37 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const { OpenAI } = require('openai');
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const axios = require("axios"); // ✅ moved up
 
 dotenv.config();
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
+app.get("/", (req, res) => {
+  res.send("🟢 Backend is up and running!");
 });
 
 app.post("/chat", async (req, res) => {
   const { message } = req.body;
-    try{
-        const response = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            messages: [{role: "user", content: message}],
-            });
-        
-        res.json({reply: response.choices[0].message.content});       
-    } catch (error) {
-        console.error("Error:",error);
-        res.status(500).json({ message: "Internal Server Error" });
-        }
+   console.log("📩 Received message from frontend:", message);
+
+  // ✨ Mock reply logic
+  try {
+    const mockReply = `🤖 [Mock GPT]: You said - "${message}"`;
+    console.log("📤 Sending mock reply:", mockReply);
+
+    // Simulate typing delay
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    res.json({ reply: mockReply });
+  } catch (error) {
+    console.error("Mock Error:", error.message);
+    res.status(500).json({ error: "Mock backend error." });
+  }
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port http://localhost:3000');
-})
+app.listen(5000, () => {
+  console.log("🚀 Server is running on http://localhost:5000");
+});
