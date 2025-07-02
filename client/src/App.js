@@ -98,7 +98,7 @@ function App() {
       setMessages((prev) => [...prev, botMessage]);
 
       const response = await fetch(
-         "https://ai-chatbot-gpt.onrender.com",
+         "https://ai-chatbot-gpt.onrender.com/chat",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
